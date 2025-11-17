@@ -1,0 +1,230 @@
+/**
+ * Product Carousel Styles
+ * Custom carousel component for product listings
+ */
+
+/* Carousel Container */
+.products-carousel-wrapper {
+    position: relative;
+    padding: 20px 60px;
+    margin-bottom: 40px;
+}
+
+.products-carousel-container {
+    overflow: hidden;
+    width: 100%;
+    cursor: grab;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.products-carousel-container:active {
+    cursor: grabbing;
+}
+
+.products-carousel-track {
+    display: flex;
+    gap: 30px;
+    transition: transform 0.5s ease;
+    will-change: transform;
+}
+
+/* Carousel Items */
+.carousel-item-wrapper {
+    flex: 0 0 calc(33.333% - 20px);
+    min-width: calc(33.333% - 20px);
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .carousel-item-wrapper {
+        flex: 0 0 calc(50% - 15px);
+        min-width: calc(50% - 15px);
+    }
+}
+
+@media (max-width: 576px) {
+    .carousel-item-wrapper {
+        flex: 0 0 100%;
+        min-width: 100%;
+    }
+}
+
+/* Navigation Buttons */
+.carousel-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid #f33f3f;
+    color: #f33f3f;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    transition: all 0.3s ease;
+}
+
+.carousel-nav-btn:hover:not(:disabled) {
+    background: #f33f3f;
+    color: white;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-nav-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.carousel-nav-btn.prev-btn {
+    left: 0;
+}
+
+.carousel-nav-btn.next-btn {
+    right: 0;
+}
+
+/* Carousel Dots */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.carousel-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ddd;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.carousel-dot:hover {
+    background: #f33f3f;
+    opacity: 0.7;
+}
+
+.carousel-dot.active {
+    background: #f33f3f;
+    width: 35px;
+    border-radius: 6px;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.loading-spinner .spinner-border {
+    width: 3rem;
+    height: 3rem;
+    border-width: 0.3em;
+}
+
+/* Brand Section */
+.brand-section {
+    margin-bottom: 60px;
+}
+
+.brand-section h3 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #2a2a2a;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #f33f3f;
+    display: inline-block;
+}
+
+/* Brand Carousel Wrapper */
+.brand-carousel-wrapper {
+    position: relative;
+    padding: 20px 60px;
+}
+
+.brand-carousel-container {
+    overflow: hidden;
+    width: 100%;
+    cursor: grab;
+}
+
+.brand-carousel-container:active {
+    cursor: grabbing;
+}
+
+/* Product Item Adjustments for Carousel */
+.products-carousel-container .product-item,
+.brand-products-container .product-item {
+    margin-bottom: 0;
+}
+
+.products-carousel-container .product-item img,
+.brand-products-container .product-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Mobile Optimizations */
+@media (max-width: 992px) {
+    .products-carousel-wrapper,
+    .brand-carousel-wrapper {
+        padding: 20px 50px;
+    }
+}
+
+@media (max-width: 576px) {
+    .products-carousel-wrapper,
+    .brand-carousel-wrapper {
+        padding: 20px 40px;
+    }
+    
+    .carousel-nav-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+    
+    .brand-section h3 {
+        font-size: 22px;
+    }
+}
+
+/* Prevent text selection during drag */
+.products-carousel-container * {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+}
+
+/* Animation for lazy loaded sections */
+.brand-section {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
