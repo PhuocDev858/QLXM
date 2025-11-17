@@ -1,0 +1,35 @@
+# Laravel
+/be-qlxm/vendor/
+/be-qlxm/node_modules/
+/be-qlxm/public/storage
+/be-qlxm/storage/*.key
+/be-qlxm/.env
+/be-qlxm/.env.backup
+/be-qlxm/.phpunit.result.cache
+/be-qlxm/Homestead.json
+/be-qlxm/Homestead.yaml
+/be-qlxm/npm-debug.log
+/be-qlxm/yarn-error.log
+
+/fe-qlxm/vendor/
+/fe-qlxm/node_modules/
+/fe-qlxm/public/storage
+/fe-qlxm/storage/*.key
+/fe-qlxm/.env
+/fe-qlxm/.env.backup
+/fe-qlxm/.phpunit.result.cache
+/fe-qlxm/Homestead.json
+/fe-qlxm/Homestead.yaml
+/fe-qlxm/npm-debug.log
+/fe-qlxm/yarn-error.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
